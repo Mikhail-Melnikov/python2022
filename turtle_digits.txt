@@ -1,0 +1,10 @@
+p x y 90 a p x+a y 180 b p x+a y+b 270 a p x y+b 360 b
+p x y+a 45 c l 180 b
+p x y 90 a l 180 a l 225 c l 90 a
+p x y 90 a l 225 c l 90 a l 225 c
+p x y 180 a l 90 a l 180 a l 0 b
+p x+a y 270 a l 180 a l 90 a l 180 a l 270 a
+p x+a y 225 c l 90 a l 180 a l 270 a l 0 a
+p x y 90 a l 225 c l 180 a
+p x y+a 0 a l 90 a l 180 a l 270 a l 180 a l 90 a l 0 a
+p x+a y+a 270 a l 0 a l 90 a l 180 a l 225 c
