@@ -1,0 +1,439 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "1c7f367e",
+   "metadata": {},
+   "source": [
+    "**Упражнение 1**"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "02340318",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "application/vnd.jupyter.widget-view+json": {
+       "model_id": "0e4e15cabc024ebebbc14a51f6c6b46b",
+       "version_major": 2,
+       "version_minor": 0
+      },
+      "text/plain": [
+       "Turtle()"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "from mobilechelonian import Turtle\n",
+    "t = Turtle()\n",
+    "import math\n",
+    "from random import *\n",
+    "t.speed(10)\n",
+    "\n",
+    "for i in range(100):\n",
+    "    t.right(randint(0, 359))\n",
+    "    t.forward(randint(0, randint(0, 50)))\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e9fc7fd1",
+   "metadata": {},
+   "source": [
+    "**Упражнение 2**"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "54cc6c80",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "application/vnd.jupyter.widget-view+json": {
+       "model_id": "07f701b75f0f4f49a7ea3b2dea2a0cba",
+       "version_major": 2,
+       "version_minor": 0
+      },
+      "text/plain": [
+       "Turtle()"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "t = Turtle()\n",
+    "t.speed(10)\n",
+    "\n",
+    "def line_pos(x, y, angle, l):\n",
+    "    t.penup()\n",
+    "    t.setposition(x, y)\n",
+    "    t.setbearing(angle)\n",
+    "    t.pendown()\n",
+    "    t.forward(l)\n",
+    "\n",
+    "def line(angle, l):\n",
+    "    t.setbearing(angle)\n",
+    "    t.pendown()\n",
+    "    t.forward(l)\n",
+    "    \n",
+    "a = 50\n",
+    "b = 2 * a\n",
+    "c = a * 2**0.5\n",
+    "\n",
+    "def dr0(x, y):\n",
+    "    line_pos(x, y, 90, a)\n",
+    "    line_pos(x + a, y, 180, b)\n",
+    "    line_pos(x + a, y + b, 270, a)\n",
+    "    line_pos(x, y + b, 360, b)\n",
+    "    \n",
+    "def dr1(x, y):\n",
+    "    line_pos(x, y + a, 45, c)\n",
+    "    line(180, b)\n",
+    "\n",
+    "def dr2(x, y):\n",
+    "    line_pos(x, y, 90, a)\n",
+    "    line(180, a)\n",
+    "    line(225, c)\n",
+    "    line(90, a)\n",
+    "    \n",
+    "def dr3(x, y):\n",
+    "    line_pos(x, y, 90, a)\n",
+    "    line(225, c)\n",
+    "    line(90, a)\n",
+    "    line(225, c)\n",
+    "    \n",
+    "def dr4(x, y):\n",
+    "    line_pos(x, y, 180, a)\n",
+    "    line(90, a)\n",
+    "    line(180, a)\n",
+    "    line(0, b)\n",
+    "\n",
+    "def dr5(x, y):\n",
+    "    line_pos(x + a, y, 270, a)\n",
+    "    line(180, a)\n",
+    "    line(90, a)\n",
+    "    line(180, a)\n",
+    "    line(270, a)\n",
+    "\n",
+    "def dr6(x, y):\n",
+    "    line_pos(x + a, y, 225, c)\n",
+    "    line(90, a)\n",
+    "    line(180, a)\n",
+    "    line(270, a)\n",
+    "    line(0, a)\n",
+    "    \n",
+    "def dr7(x, y):\n",
+    "    line_pos(x, y, 90, a)\n",
+    "    line(225, c)\n",
+    "    line(180, a)\n",
+    "    \n",
+    "def dr8(x, y):\n",
+    "    line_pos(x, y + a, 0, a)\n",
+    "    line(90, a)\n",
+    "    line(180, a)\n",
+    "    line(270, a)\n",
+    "    line(180, a)\n",
+    "    line(90, a)\n",
+    "    line(0, a)\n",
+    "    \n",
+    "def dr9(x, y):\n",
+    "    line_pos(x + a, y + a, 270, a)\n",
+    "    line(0, a)\n",
+    "    line(90, a)\n",
+    "    line(180, a)\n",
+    "    line(225, c)\n",
+    "    \n",
+    "dr0(20, 20)\n",
+    "dr1(90, 20)\n",
+    "dr2(160, 20)\n",
+    "dr3(230, 20)\n",
+    "dr4(300, 20)\n",
+    "dr5(20, 150)\n",
+    "dr6(90, 150)\n",
+    "dr7(160, 150)\n",
+    "dr8(230, 150)\n",
+    "dr9(300, 150)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "29a7711f",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "application/vnd.jupyter.widget-view+json": {
+       "model_id": "971bddcb91b448938f5ad1843bc37a6a",
+       "version_major": 2,
+       "version_minor": 0
+      },
+      "text/plain": [
+       "Turtle()"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "a = 30\n",
+    "b = 2*a\n",
+    "c = a * 2**0.5\n",
+    "\n",
+    "t = Turtle()\n",
+    "t.speed(10)\n",
+    "digit = [dr0, dr1, dr2, dr3, dr4, dr5, dr6, dr7, dr8, dr9]\n",
+    "digit[1](20, 50)\n",
+    "digit[4](70, 50)\n",
+    "digit[1](120, 50)\n",
+    "digit[7](170, 50)\n",
+    "digit[0](220, 50)\n",
+    "digit[0](270, 50)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e7ee9024",
+   "metadata": {},
+   "source": [
+    "**Упражнение 3**"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "90e4da3a",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "application/vnd.jupyter.widget-view+json": {
+       "model_id": "f8288e33ac2b4df5824cdfd947ad4c75",
+       "version_major": 2,
+       "version_minor": 0
+      },
+      "text/plain": [
+       "Turtle()"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "t = Turtle()\n",
+    "t.speed(10)\n",
+    "\n",
+    "a = 50\n",
+    "b = 2 * a\n",
+    "c = a * 2**0.5\n",
+    "\n",
+    "file = open('turtle_digits.txt', \"r\")\n",
+    "commands = file.readlines()\n",
+    "file.close()\n",
+    "func = []\n",
+    "for i in range(len(commands)):\n",
+    "    func.append(commands[i].split())\n",
+    "\n",
+    "def draw(x, y, n):\n",
+    "    k = 0\n",
+    "    while k < len(func[n]):\n",
+    "        if func[n][k] == 'p':\n",
+    "            x0 = func[n][k + 1]\n",
+    "            y0 = func[n][k + 2]\n",
+    "            l = func[n][k + 4]\n",
+    "            if x0 == 'x':\n",
+    "                x1 = x\n",
+    "            elif x0 == 'x+a':\n",
+    "                x1 = x + a\n",
+    "            elif x0 == 'x+b':\n",
+    "                x1 = x + b\n",
+    "            elif x0 == 'x+c':\n",
+    "                x1 = x + c\n",
+    "            \n",
+    "            if y0 == 'y':\n",
+    "                y1 = y\n",
+    "            elif y0 == 'y+a':\n",
+    "                y1 = y + a\n",
+    "            elif y0 == 'y+b':\n",
+    "                y1 = y + b\n",
+    "            elif y0 == 'y+c':\n",
+    "                y1 = y + c\n",
+    "            \n",
+    "            if l == 'a':\n",
+    "                l1 = a\n",
+    "            elif l == 'b':\n",
+    "                l1 = b\n",
+    "            elif l == 'c':\n",
+    "                l1 = c\n",
+    "            \n",
+    "            line_pos(x1, y1, int(func[n][k + 3]), l1)\n",
+    "            k += 5\n",
+    "            \n",
+    "        elif func[n][k] == 'l':\n",
+    "            l = func[n][k + 2]\n",
+    "            if l == 'a':\n",
+    "                l1 = a\n",
+    "            elif l == 'b':\n",
+    "                l1 = b\n",
+    "            elif l == 'c':\n",
+    "                l1 = c\n",
+    "            line(int(func[n][k + 1]), l1)\n",
+    "            k += 3\n",
+    "\n",
+    "\n",
+    "draw(20, 20, 0)\n",
+    "draw(90, 20, 1)\n",
+    "draw(160, 20, 2)\n",
+    "draw(230, 20, 3)\n",
+    "draw(300, 20, 4)\n",
+    "draw(20, 150, 5)\n",
+    "draw(90, 150, 6)\n",
+    "draw(160, 150, 7)\n",
+    "draw(230, 150, 8)\n",
+    "draw(300, 150, 9)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "0c44f8bc",
+   "metadata": {},
+   "source": [
+    "**Упражнение 4**"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "914f91c0",
+   "metadata": {
+    "scrolled": true
+   },
+   "outputs": [
+    {
+     "data": {
+      "application/vnd.jupyter.widget-view+json": {
+       "model_id": "5839b93db1904ad59967df13e3b8fa54",
+       "version_major": 2,
+       "version_minor": 0
+      },
+      "text/plain": [
+       "Turtle()"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "t = Turtle()\n",
+    "t.speed(10)\n",
+    "\n",
+    "x = 0.0\n",
+    "y = 400.0\n",
+    "vx = 12.0\n",
+    "vy = 80.0\n",
+    "dt = 0.2\n",
+    "g = 10.0\n",
+    "\n",
+    "t.penup()\n",
+    "t.setposition(x, y)\n",
+    "t.pendown()\n",
+    "\n",
+    "while (x < 400):\n",
+    "    x += vx * dt\n",
+    "    y -= vy*dt - g * dt**2 / 2\n",
+    "    if (y > 400):\n",
+    "        y = 400 - (y - 400)\n",
+    "        vy = -0.8 * vy\n",
+    "    vy -= g * dt\n",
+    "    t.setposition(round(x), round(y))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "19a16444",
+   "metadata": {},
+   "source": [
+    "**Упражнение 5**"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 71,
+   "id": "f388ec29",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "application/vnd.jupyter.widget-view+json": {
+       "model_id": "669bdd1e295047c79c17b5e82be5a2a7",
+       "version_major": 2,
+       "version_minor": 0
+      },
+      "text/plain": [
+       "Turtle()"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "application/vnd.jupyter.widget-view+json": {
+       "model_id": "f405a0797ee147b8b2f221a4d206b55c",
+       "version_major": 2,
+       "version_minor": 0
+      },
+      "text/plain": [
+       "Turtle()"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "563da662",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.13"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
